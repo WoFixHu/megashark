@@ -26,7 +26,6 @@
                 <th scope="col"><?= $this->Paginator->sort('end') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -38,14 +37,36 @@
                 <td><?= h($showtime->start) ?></td>
                 <td><?= h($showtime->end) ?></td>
                 <td><?= h($showtime->created) ?></td>
-                <td><?= h($showtime->modified) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $showtime->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $showtime->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $showtime->id], ['confirm' => __('Are you sure you want to delete # {0}?', $showtime->id)]) ?>
-                </td>
+                <td><?= h($showtime->modified) ?></td>                
             </tr>
             <?php endforeach; ?>
+        <tbody/>
+            <div class="showtimes index large-9 medium-8 columns content">
+                <table cellpadding="0" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th scope="col"><?= $this->Paginator->sort('Monday') ?></th>
+                                <th scope="col"><?= $this->Paginator->sort('Tuesday') ?></th>
+                                <th scope="col"><?= $this->Paginator->sort('Wednesday') ?></th>
+                                <th scope="col"><?= $this->Paginator->sort('Thursday') ?></th>
+                                <th scope="col"><?= $this->Paginator->sort('Friday') ?></th>
+                                <th scope="col"><?= $this->Paginator->sort('Saturday') ?></th>
+                                <th scope="col"><?= $this->Paginator->sort('Sunday') ?></th>
+                            </tr>
+                        </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>Titanic</td>
+                            <td></td>
+                            <td>Avatar</td>
+                            <td>Albator</td>
+                            <td>World War Z</td>
+                            <td></td>                
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </tbody>
     </table>
     <div class="paginator">
@@ -59,3 +80,5 @@
         <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
     </div>
 </div>
+
+
